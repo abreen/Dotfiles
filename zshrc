@@ -9,6 +9,7 @@ alias ll='ls -l'
 alias v=vim
 
 alias g=git
+alias gf='git fetch'
 alias gp='git pull'
 alias gP='git push'
 alias gd='git diff'
