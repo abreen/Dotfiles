@@ -1,5 +1,7 @@
 # vim: et:ts=2:sw=2
 
+bindkey -e
+
 export EDITOR=vim
 alias edit="$EDITOR"
 alias e=edit
@@ -20,4 +22,5 @@ alias gs='git status'
 alias gl='git log'
 
 source "$HOME/.zshrc-term"
+source "$HOME/.zshrc-homebrew"
 [[ -f "$HOME/.zshrc-work" ]] && source "$HOME/.zshrc-work"

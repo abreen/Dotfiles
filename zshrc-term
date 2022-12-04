@@ -1,15 +1,17 @@
 if [ "$TERM" = "vt320" ]; then
-    PROMPT='> '
+    PROMPT='%1~%(!.#.$) '
     RPROMPT=''
 
     DISABLE_LS_COLORS="true"
     export CLICOLOR=0
 
     export LC_ALL='en_US.ISO8859-1'
+    export LANG='en_US.ISO8859-1'
 
     stty dec
     stty columns 80
-    stty rows 24
+    #stty columns 132
+    #stty rows 24
 
 else
     PROMPT='%1~%(!.#.$) '
