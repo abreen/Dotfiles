@@ -1,6 +1,3 @@
-set nocompatible
-
-"map! ^? ^H
 map! ^[OA ^[ka
 map! ^[OB ^[ja
 map! ^[OC ^[la
@@ -12,7 +9,6 @@ set smarttab
 set expandtab
 
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-
 autocmd Filetype sh setlocal expandtab
 autocmd Filetype python setlocal expandtab
 autocmd Filetype java setlocal expandtab
@@ -33,7 +29,6 @@ set foldmethod=indent foldlevelstart=2 foldnestmax=2
 set nonumber
 set noshowmode
 set noruler
-set noesckeys
 set showcmd
 
 set hlsearch
@@ -54,4 +49,3 @@ highlight Comment term=none
 highlight Search term=underline
 highlight LineNr term=none
 highlight EndOfBuffer term=none
-
