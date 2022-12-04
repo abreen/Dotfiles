@@ -22,27 +22,36 @@ autocmd Filetype css setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype markdown setlocal expandtab
-autocmd Filetype lua setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 set magic
 set smartindent
 set so=3
 
 "set foldmethod=syntax
+set foldmethod=indent foldlevelstart=2 foldnestmax=2
 
+set nonumber
 set noshowmode
 set noruler
 set noesckeys
-
-set background=dark
+set showcmd
 
 set hlsearch
 set noerrorbells
 set novisualbell
 
+set background=dark
 syntax on
 
-set ruler
-set showcmd
+highlight VisualNOS term=none
+highlight TabLine term=none
+highlight PreProc term=none
+highlight Type term=bold
+highlight Identifier term=none
+highlight Constant term=none
+"highlight Underlined term=none
+highlight Comment term=none
+highlight Search term=underline
+highlight LineNr term=none
+highlight EndOfBuffer term=none
 
-set nonumber
