@@ -26,16 +26,16 @@ set so=3
 "set foldmethod=syntax
 set foldmethod=indent foldlevelstart=2 foldnestmax=2
 
+set ruler
+set showcmd
 set nonumber
 set noshowmode
-set noruler
-set showcmd
 
 set hlsearch
 set noerrorbells
 set novisualbell
 
-set background=dark
+colorscheme dim
 syntax on
 
 highlight VisualNOS term=none

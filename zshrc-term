@@ -1,6 +1,5 @@
 if [ "$TERM" = "vt320" ]; then
-    PROMPT='%1~%(!.#.$) '
-    RPROMPT=''
+    PROMPT='> '
 
     DISABLE_LS_COLORS="true"
     export CLICOLOR=0
@@ -12,10 +11,10 @@ if [ "$TERM" = "vt320" ]; then
     stty columns 80
     #stty columns 132
     #stty rows 24
-
 else
-    PROMPT='%1~%(!.#.$) '
-    RPROMPT=''
+    autoload -U colors && colors
+
+    PROMPT="%{$fg[blue]%}>%{$reset_color%} "
 
     export CLICOLOR=1
 
@@ -27,3 +26,16 @@ else
     export LS_COLORS="$LS_COLORS""fi=0:or=31:mi=4:ow=30;44"
     export LSCOLORS="$LSCOLORS""abagaeae"
 fi
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:*' disable bzr cdv cvs darcs fossil hg mtn p4 svk svn tla
+zstyle ':vcs_info:git*' formats "%b"
+prepend_right_prompt() {
+    if [ ! -z "$vcs_info_msg_0_" ]; then
+      export RPROMPT="$vcs_info_msg_0_:%1d"
+    else
+      export RPROMPT='%2d'
+    fi
+}
+precmd_functions=(prepend_right_prompt)

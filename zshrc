@@ -8,7 +8,7 @@ alias e=edit
 
 alias l=ls
 alias ll='ls -l'
-alias v=vim
+alias la='ls -a'
 
 alias g=git
 alias gf='git fetch'
@@ -23,4 +23,5 @@ alias gl='git log'
 
 source "$HOME/.zshrc-term"
 source "$HOME/.zshrc-homebrew"
+source "$HOME/.zshrc-ssh"
 [[ -f "$HOME/.zshrc-work" ]] && source "$HOME/.zshrc-work"
