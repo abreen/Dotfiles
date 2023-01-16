@@ -139,3 +139,20 @@ be checked into a version control system.
 
 `build.ini` is required because it contains GitHub repository details
 for the `update` command.
+
+
+## Using company-loaned machines
+
+Here's my personal workflow when setting up a new company-owned machine:
+
+1.  Install [SDKMAN!](https://sdkman.io/)
+2.  Download [`Dotfiles` zipball](https://github.com/abreen/Dotfiles/archive/refs/heads/main.zip)
+3.  Add new directories to an existing platform but do not add the new
+    directories to Git
+4.  Use `secrets.ini` for secrets, keys, passwords, and tokens and reference
+    them by variable name in the dotfiles
+
+`Dotfiles.java` will pick up the new dotfiles automatically on the next build.
+The strength of this approach is that you never need to write code that
+imperatively includes another configuration file, and you can still use
+the `update` command to retrieve changes without dealing with merge conflicts.
